@@ -7,8 +7,13 @@ def agregarUniversidad():
     nombre = input("Ingrese el nombre: ")
     rector = input("Ingrese el rector: ")
     tipo = input("Ingrese el tipo: ")
+    carrera_nombre = input("Ingrese el nombre de la carrera: ")
+    carrera_duracion = input("Ingrese el duracion de la carrera: ")
+    carrera_num_estudiantes = input("Ingrese el numero de estudiantes: ")
     # se crea el objeto
+    c = Carrera(carrera_nombre, carrera_duracion, carrera_num_estudiantes)
     u = Universidad(nombre, rector, tipo)
+    u.obtener_carreras().append(c)
     listaUniversidades.append(u)
     
 
@@ -19,6 +24,7 @@ def desplegarUniversidades():
         print("Nombre: ",listaUniversidades[registro].obtener_nombre())
         print("Rector: ",listaUniversidades[registro].obtener_rector())
         print("Tipo: ",listaUniversidades[registro].obtener_nombre())
+        print("Nombre de carrera: ",listaUniversidades[registro].obtener_carreras()[0].obtener_nombre())
         registro+=1
                         
 def menuPrincipal():
